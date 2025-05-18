@@ -1,0 +1,18 @@
+# Save as app.py
+import streamlit as st
+import numpy as np
+
+st.title("Traffic Accident Severity Predictor")
+
+hour = st.slider("Hour of Day", 0, 23)
+day = st.selectbox("Day of Week", list(range(7)))
+month = st.selectbox("Month", list(range(1, 13)))
+weather = st.selectbox("Weather Condition", le.classes_.tolist())
+weather_encoded = le.transform([weather])[0]
+visibility = st.slider("Visibility (mi)", 0.0, 10.0)
+temperature = st.slider("Temperature (F)", -20.0, 120.0)
+
+input_data = np.array([[hour, day, month, weather_encoded, visibility, temperature]])
+prediction = model.predict(input_data)
+
+st.write(f"Predicted Accident Severity: {prediction[0]}")
