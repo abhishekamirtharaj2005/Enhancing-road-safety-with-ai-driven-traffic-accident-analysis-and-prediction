@@ -1,0 +1,6 @@
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv('US_Accidents_Dec20.csv')  # Replace with your dataset
+print(df.shape)
+df.head()
