@@ -1,0 +1,4 @@
+from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder()
+df['Weather_Condition'] = le.fit_transform(df['Weather_Condition'])
