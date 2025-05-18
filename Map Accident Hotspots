@@ -1,0 +1,9 @@
+import folium
+
+m = folium.Map(location=[37, -95], zoom_start=4)
+
+for i in range(100):  # limit to 100 for performance
+    folium.CircleMarker([df.iloc[i]['Start_Lat'], df.iloc[i]['Start_Lng']],
+                        radius=3, color='red').add_to(m)
+
+m.save('accident_map.html')
